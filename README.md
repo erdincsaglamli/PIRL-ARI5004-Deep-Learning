@@ -1,12 +1,22 @@
 # PIRL-ARI5004-Deep-Learning
 
 # Self-Supervised Learning with PIRL: Reproduction Instructions
+
+
+This repository contains the implementation of the paper "Self-Supervised Learning of Pretext-Invariant Representations" by Ishan Misra and Laurens van der Maaten. The goal is to reproduce the experiment results presented in the ARI5004-Deep-Learning lecture project report.
+
+
+## Introduction to PIRL:
+
+PIRL introduces a transformative perspective by emphasizing the importance of semantic representations that remain invariant under image transformations. By focusing on Pretext-Invariant Representation Learning, PIRL ensures that the learned representations retain semantic information despite various transformations. This methodology stands in contrast to traditional approaches that encourage covariance with transformations, making PIRL particularly well-suited for tasks such as object detection and image classification.
+
 <p align="center">
   <img src="https://wiki.math.uwaterloo.ca/statwiki/images/e/ee/SSL_3.JPG" width="500">
 </p>
 
 
-This repository contains the implementation of the paper "Self-Supervised Learning of Pretext-Invariant Representations" by Ishan Misra and Laurens van der Maaten. The goal is to reproduce the experiment results presented in the ARI5004-Deep-Learning lecture project report.
+This GitHub repository contains the implementation of PIRL, as described in the paper by Ishan Misra and Laurens van der Maaten. The provided code allows users to pre-train models using the PIRL methodology, fine-tune them for specific tasks, and evaluate the quality of learned representations across various benchmarks. The reproducibility of results and ease of use make this repository a valuable resource for researchers and practitioners interested in self-supervised learning and representation learning.
+
 
 ## Prerequisites
 
