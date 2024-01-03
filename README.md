@@ -1,6 +1,10 @@
 # PIRL-ARI5004-Deep-Learning
 
 # Self-Supervised Learning with PIRL: Reproduction Instructions
+<p align="center">
+  <img src="https://wiki.math.uwaterloo.ca/statwiki/images/e/ee/SSL_3.JPG" width="500">
+</p>
+
 
 This repository contains the implementation of the paper "Self-Supervised Learning of Pretext-Invariant Representations" by Ishan Misra and Laurens van der Maaten. The goal is to reproduce the experiment results presented in the ARI5004-Deep-Learning lecture project report.
 
@@ -8,7 +12,6 @@ This repository contains the implementation of the paper "Self-Supervised Learni
 
 - Python 3.x
 - PyTorch (installation instructions [here](https://pytorch.org/get-started/locally/))
-- Other dependencies (install via `pip install -r requirements.txt`)
 
 ## Project Structure
 
@@ -48,6 +51,13 @@ python pirl_stl_train_test.py --model-type res18 --batch-size 128 --lr 0.1 --exp
 2. Run script train_stl_after_ssl.py for fine tuning model parameters obtained from self supervised learning, example
 ```bash
 python train_stl_after_ssl.py --model-type res18 --batch-size 128 --lr 0.1  --patience-for-lr-decay 4 --full-fine-tune True --pirl-model-name <relative_model_path from above run>
+```
+
+
+3. Run script train_stl_after_ssl_normal_model.py for fine-tuning model parameters obtained from Resnet-18, example
+
+```bash
+python train_stl_after_ssl_normal_model.py --model-type res18 --batch-size 128 --lr 0.1  --patience-for-lr-decay 4 --full-fine-tune True
 ```
 
 ### 4. Results
