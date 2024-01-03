@@ -27,13 +27,8 @@ git clone https://github.com/your-username/self-supervised-pirl.git
 cd self-supervised-pirl
 ```
 
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
 
-
-### 3. Download Dataset
+### 2. Download Dataset
 
 The implementation uses STL10 dataset, which can be downloaded from [here](http://ai.stanford.edu/~acoates/stl10/)
 
@@ -43,7 +38,7 @@ Dataset setup steps
 2. Run stl10_data_load.py. This will save three directories train, test and unlabelled in ./stl10_data/
 ```
 
-### 4. Training and Evaluation Steps (Pre-train with PIRL)
+### 3. Training and Evaluation Steps (Pre-train with PIRL)
 
 1. Run the following command to pre-train the model using the PIRL methodology:
 ```bash
@@ -55,4 +50,41 @@ python pirl_stl_train_test.py --model-type res18 --batch-size 128 --lr 0.1 --exp
 python train_stl_after_ssl.py --model-type res18 --batch-size 128 --lr 0.1  --patience-for-lr-decay 4 --full-fine-tune True --pirl-model-name <relative_model_path from above run>
 ```
 
-### 5. Results
+### 4. Results
+
+We present the experiment results along with graphical representations for bet ter visualization.
+<br>
+
+<p align="center">
+  <img src="https://github.com/erdincsaglamli/PIRL-ARI5004-Deep-Learning/blob/main/grph_1.png?raw=true" width="500">
+  
+</p>
+Graph 1: PIRL Task Loss Graph. The graph illustrates the progress of our model in learning the Jigsaw task across 50 epochs. The PIRL methodology is effective in capturing the semantic information required for the pretext task.
+
+
+<p align="center">
+  <img src="https://github.com/erdincsaglamli/PIRL-ARI5004-Deep-Learning/blob/main/grph_2.png?raw=true" width="500">
+  
+</p>
+Graph 2: Normal ResNet-18 Fine-tuning. After 30 epochs of fine-tuning, the test set results indicate an average loss of 1.9167, corresponding to an accuracy of 30.25. The graph visually represents the convergence and performance of the model during fine-tuning.
+
+<p align="center">
+  <img src="https://github.com/erdincsaglamli/PIRL-ARI5004-Deep-Learning/blob/main/grph_3.png?raw=true" width="500">
+  
+</p>
+Graph 3: ResNet-18 + PIRL Fine-tuning. After 30 epochs of fine-tuning with the PIRL pre-trained ResNet-18 back bone, the test set results show an average loss of 1.4884, with an accuracy of
+46.25. The comparison with the normal fine-tuning results highlights the improvement achieved by incorporating PIRL pre-training.
+<br>
+
+<br>
+The fine-tuning results demonstrate the impact of PIRL pre-training on the model’s accuracy and loss during the specific task of object detection. The improved accuracy in the PIRL finetuned model indicates the effectiveness of the self-supervised learning approach in enhancing the representation learning process.
+
+<br>
+### 5. References
+
+* Misra, I., van der Maaten, L. Self-Supervised Learning of Pretext-Invariant Representations. In Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
+* Noroozi, M., Favaro, P. Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles. In European Conference on Computer Vision (ECCV), 2016.
+* Gidaris, S., Komodakis, N. Unsupervised Representation Learning by Predicting Image Rotations. In International Conference on Learning Represen tations (ICLR), 2018.
+* Kharitonov, E., Denisov, A., Sattarov, T., Khomenko, D. Unsupervised Object Localization with Frame Rotation Prediction. In International Conference on Learning Representations (ICLR), 2020.
+* He, K., Fan, H., Wu, Y., Xie, S., Girshick, R. Momentum Contrast for Unsupervised Visual Representation Learning. In Conference on Computer Vision and Pattern Recognition (CVPR), 2020
+
