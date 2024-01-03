@@ -80,6 +80,7 @@ Graph 3: ResNet-18 + PIRL Fine-tuning. After 30 epochs of fine-tuning with the P
 The fine-tuning results demonstrate the impact of PIRL pre-training on the model’s accuracy and loss during the specific task of object detection. The improved accuracy in the PIRL finetuned model indicates the effectiveness of the self-supervised learning approach in enhancing the representation learning process.
 
 <br>
+
 ### 5. References
 
 * Misra, I., van der Maaten, L. Self-Supervised Learning of Pretext-Invariant Representations. In Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
